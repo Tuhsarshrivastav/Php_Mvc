@@ -1,6 +1,5 @@
 <?php
 
-
 class database {
 
 
@@ -10,6 +9,7 @@ class database {
     public $password = PASSWORD;
     public $con;
     public $result;
+
     public function __construct(){
 
      try{
@@ -24,37 +24,42 @@ class database {
      }
 
     }
+
     public function Query($qry, $params = []){
-        if(empty($params)){
- 
-         $this->result = $this->con->prepare($qry);
-         return $this->result->execute();
- 
-        } else {
-            $this->result = $this->con->prepare($qry);
-            return $this->result->execute($params);
-        }
- 
-     }
- 
-     public function rowCount(){
- 
-         return $this->result->rowCount();
- 
-     }
- 
-     public function fetchall(){
- 
-         return $this->result->fetchAll(PDO::FETCH_OBJ);
- 
-     }
- 
-     public function fetch(){
- 
-         return $this->result->fetch(PDO::FETCH_OBJ);
- 
-      }
- 
- 
- 
- }
+      
+       if(empty($params)){
+
+        $this->result = $this->con->prepare($qry);
+        return $this->result->execute();
+
+       } else {
+           $this->result = $this->con->prepare($qry);
+           return $this->result->execute($params);
+       }
+
+    }
+
+    public function rowCount(){
+
+        return $this->result->rowCount();
+
+    }
+
+    public function fetchall(){
+
+        return $this->result->fetchAll(PDO::FETCH_OBJ);
+
+    }
+
+    public function fetch(){
+
+        return $this->result->fetch(PDO::FETCH_OBJ);
+
+    }
+
+
+
+}
+
+
+?>

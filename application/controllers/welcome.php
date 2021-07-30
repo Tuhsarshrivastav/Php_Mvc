@@ -1,9 +1,13 @@
 <?php
 
-  class welcome {
-      public function index(){
-          echo "welcome controller";
-      }
-  }
+class welcome {
+
+   public function index(){
+       echo "welcome controller";
+   }
+
+}
+
+
 
 ?>

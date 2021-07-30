@@ -1,9 +1,10 @@
 <?php
+spl_autoload_register(function($className){
 
-  spl_autoload_register(function($className){
+  include "classes/$className.php";
+});
 
-   include "classes/$className.php";
-  });
-  $route = new route;
+$rout = new rout;
+
 
 ?>
